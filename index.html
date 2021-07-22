@@ -1,16 +1,59 @@
 <html>
-    <head>
+
+<head>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>Simple Interest Calculator</h1>
+</head>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+<body>
+    <div id="layout">
+        <div id="calculator">
+            <h1>Simple Interest Calculator</h1>
+            <table>
+                <tr>
+                    <td>
+                        <label for="amount">Amount</label>
+                    </td>
+                    <td>
+                        <input type="number" min=0 value=0 id="principal" required> <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="rate">Rate</label>
+                    </td>
+                    <td>
+                        <div style="display: flex">
+                            <input type="range" min=0 max=100 step=0.1 value=0 id="rate" onchange="update(this.value)">
+                            <br />
 
-        <button onclick="compute()">Compute</button>
-    </body>
+                            <label for="rate_value" id="rate_label">0%</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="years">No. of Years </label>
+                    </td>
+                    <td>
+                        <input type="number" min=1 value=1 id="years"> <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button onclick="compute()">Compute Interest</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                    </td>
+                </tr>
+            </table>
+            <span id="result"></span><br>
+        </div>
+        <p style="align-self:left;">&copy Everyone Can Get Rich</p>
+    </div>
+</body>
+
 </html>
